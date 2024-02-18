@@ -8,3 +8,6 @@ output
 
 # Intermediate generations
 resume_int.json
+
+#Testing
+.tox
