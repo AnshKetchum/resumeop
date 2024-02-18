@@ -1,0 +1,7 @@
+JOB DESCRIPTION:
+
+{job_description}
+
+I am about to give you an experience from my resume, which contains detailed information about my past work experiences. I want you to rewrite the paragraphs I give you into resume bullet points, and tailor it specifically for the Python Developer job I sent to you previously. By “tailor”, I mean explain each bullet point using similar language to what’s written in the job description. 
+
+Resume experience: {resume_experience}

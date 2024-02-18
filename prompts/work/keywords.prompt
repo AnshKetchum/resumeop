@@ -1,0 +1,20 @@
+You are given a candidate's job experience, and your goal as an AI recruiter is to identify areas where the candidate 
+may excel at. You are given the following job description, with the title, company, and job experience provided down below:
+
+JOB INFO
+
+{job_description}
+
+CANDIDATE INFO: 
+
+Company: {company_title} 
+
+Candidate's Job Title: {job_title}
+
+Candidate's description of the job he did for the company: {job_experience}
+
+Based on the job description, what are the most important technical skills required for the job? Which technical skills from my experience would give me an advantage in this role? Write me an extremely specific, numbered list of the most technical skills that the experience shows.
+
+Examples of technical skills include: Python, Figma, SEO Optimization, Big Data, Quantum Computing
+
+

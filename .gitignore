@@ -1,0 +1,10 @@
+# Outputs of the program`
+__pycache__
+test
+output
+
+# Private-Files
+.env
+
+# Intermediate generations
+resume_int.json

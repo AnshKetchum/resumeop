@@ -1,0 +1,23 @@
+You are given a candidate's job experience, and your goal as an AI recruiter is to identify areas where the candidate 
+may excel at. You are given the following job description, with the title, company, and job experience provided down below, alongside some information on the target job the applicant is applying to:
+
+TARGET JOB 
+
+Description: {description}
+
+CANDIDATE INFO: 
+
+Company: {company_title} 
+
+Candidate's Job Title: {job_title}
+
+Candidate's description of the job he did for the company: {job_experience}
+
+Candidate's point of impact: {impact}
+
+Candidate keywords: {keywords}
+
+Using this, write a 1-2 line, short form resume description of the experience, expanding upon the most relevant technical things done. To approach this, use the first couple keywords as inspiration and write about what the candidate
+would do at a day in this job. Don't include fluff like the candidate's job title --- focus solely on the technical things you'd imagine they would have to do daily to accomplish what they did. Don't include results or impact here either.
+
+To make it ATS-friendly, focus on including a variety of action verbs and profile-centric keywords.

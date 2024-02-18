@@ -1,0 +1,12 @@
+Now consider the following TypeScript Interface for the JSON schema:
+
+interface TechnicalSkill {
+    topic: string;
+    name: string;
+}
+
+interface TechnicalSkills {
+    skills: TechnicalSkill[];
+}
+
+Create an array of TechnicalSkill section according to the TechnicalSkills schema using the resume. On the response, include only the JSON.

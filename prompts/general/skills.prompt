@@ -1,0 +1,15 @@
+You are given a candidate's job experience, and your goal as an AI recruiter is to identify areas where the candidate 
+may excel.
+
+CANDIDATE INFO: 
+
+Keywords from the candidates's experience: {candidate_keywords}
+
+Seperate the keywords that they are given into the broader categories they fall into.
+
+Generate an organized, numbered list containing the broader topic, and the organized keywords. Keep the most impactful points first, and the least impactful last. 
+
+Example output would look like the following, with the topic and the keyword paired together:
+
+1. Programming: Python, Java, C
+2. Web Development: React.js, Angular.js

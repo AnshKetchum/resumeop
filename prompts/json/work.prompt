@@ -1,0 +1,16 @@
+Now consider the following TypeScript Interface for the JSON schema:
+
+interface WorkExperience {
+    experience_start: string;
+    experience_end: string;
+    position: string;
+    company: string;
+    location: string;
+    description: string;
+}
+
+interface WorkExperiences {
+    works: WorkExperience[];
+}
+
+Create an array of WorkExperience section according to the WorkExperiences schema using the resume. On the response, include only the JSON.

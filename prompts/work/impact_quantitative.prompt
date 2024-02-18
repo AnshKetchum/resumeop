@@ -1,0 +1,22 @@
+You are given a candidate's job experience, and your goal as an AI recruiter is to identify areas where the candidate 
+may excel at. You are given the following job description, with the title, company, and job experience provided down below, alongside some information on the target job the applicant is applying to:
+
+TARGET JOB 
+
+Description: {description}
+
+CANDIDATE INFO: 
+
+Company: {company_title} 
+
+Candidate's Job Title: {job_title}
+
+Candidate's description of the job he did for the company: 
+
+BEGIN CANDIDATE DESCRIPTION
+
+{candidate_bullet_points}
+
+END CANDIDATE DESCRIPTION
+
+Rewrite the candidate's description as a numbered list of extremely concise but specific resume bullet point that includes {n} results-driven achievement statements relevant to the job description. Start each bullet with an action verb, followed by the task, and conclude with the result. Please quantify each statement using numbers, percentages, and dollar amounts. Only quote statements with numbers I've provided.

@@ -1,0 +1,83 @@
+Senior C++ Engineer
+
+A day in the life of an Engineer in the SMART team  
+
+As an engineer in the SMART team at Hawk-Eye Innovations, you will be part of an agile team that is responsible for the delivery of a suite of products based on our SMART (Synchronised Multi-Angle Replay Technology) codebase, used in 19 of the biggest 20 sports leagues in the world. On any given day you can expect to be solving challenging problems across a variety of disciplines, including interfacing with hardware to capture/output video, video/audio encoding, networking over TCP/UDP, complex multithreading, and creating UIs to enable sports officials to quickly reach accurate decisions. You will be working with code that is developed in Visual Studio using modern C++ for Windows based software, making use of Qt for our UIs.
+
+
+You will partner closely with our product team and customers to establish requirements and develop innovative solutions to the most complex challenges within sports technology.  You can expect to solve significant problems and collaborate with the wider team to brainstorm solutions, conduct research and find the best approach.  You will be working in agile principles, using two-week sprints to deliver game-changing technology and will support the configuration and deployment of our products that are delivered on a global scale.
+
+Key Responsibilities
+
+    Taking the lead on designing and implementing new components of the SMART system
+
+    Maintaining our existing software
+
+    Full life cycle development of projects, liaising with creatives, product engineers and the wider development team
+
+    Supporting testing in the field, which sometimes includes travel to sports events 
+
+    A desire and the ability to innovate, learn and push the boundaries
+
+    Helping more junior team members to improve, and ensuring the code they write meets our high standards when it is merged
+
+Skills, Knowledge and Expertise 
+
+    You will be highly proficient in modern C++ (up to at least 11/14)
+
+    You will have a strong knowledge of performance optimisation
+
+    You will be proficient in writing efficient multithreaded code
+
+    You will have experience with networking protocols
+
+    Ideally, you will have knowledge of Git and Visual Studio
+
+    Any knowledge of the following would be a bonus:
+
+        Qt
+
+        ElasticSearch
+
+        AWS
+
+        OpenGL
+
+        Audio processing
+
+        FFmpeg
+
+        ZeroMQ
+
+
+Our SMART Team 
+
+Our SMART team at Hawk-Eye Innovations is responsible for delivering reliable, efficient, low latency tools for making use of broadcast cameras at sports events. This includes officiating solutions which are used to allow referees to view replays of key incidents, augmented by information from our in house ball and player tracking systems.
+
+Our VAR system is used to help officiate in the biggest football leagues in the world, including the top leagues in England, Germany, Spain, Italy, France and the USA, the UEFA Champion’s League and the FIFA World Cup. Outside of football, our SMART products are used in almost every major sport in the world, including the Olympics, American football, baseball, basketball, ice hockey, cricket, tennis and golf.
+
+In addition to officiating, we are also used as a broadcast tool, providing the ability to add replays and graphics to TV productions. This ranges from working with massive productions like the Masters golf tournament (where we won a Sports Emmy for our product that allowed viewers at home to view every shot of the tournament at the click of a button) to smaller events on the tennis tour where we provide the entire production, including cameras which we remotely control to follow the play.
+
+As part of our SMART Team, you will create software that is integral to some of the biggest sporting tournaments, leagues and federations in the world. You’ll be able to see the results of your work on live TV, along with billions of sports fans around the world whose experience will be augmented by your software.
+
+Our SMART Team Culture 
+
+Our SMART team at Hawk-Eye is built on a culture shaped by openness and honesty, along with a desire to push the boundaries of technology and innovation. We are constantly learning so that we can keep up to date with modern ways of doing things, and we use our code review process to challenge each other to improve and work in the best way possible, regardless of seniority in the team. We have areas that specific individuals are responsible for, but we always work collaboratively so that everyone can gain knowledge across our codebase, and areas of responsibility change over time as team members progress. We are agile and strive for the highest quality in everything we produce, whilst always ensuring that the code we write is clear and maintainable.
+
+Our Tech Stack
+
+At Hawk-Eye Innovations, we continue to push the boundaries of innovation within global sport.  As part of our team, you will work closely with exceptional people and the most cutting edge technologies.  
+
+You can expect to work with:
+
+    Primarily modern C++ (20)
+
+    Production software targets Windows 10
+
+    Tools: Git, CMake, TeamCity, JIRA, Confluence, Slack
+
+    Libraries: Qt, ElasticSearch, Boost, ZeroMQ, FFmpeg, OpenGL
+
+Equal Opportunity Employer
+
+Hawk-Eye is an equal opportunities employer and as such makes every effort to ensure that all potential employees are treated fairly and equally, regardless of their sex, sexual orientation, marital status, race, colour, nationality, ethnic or national origin, religion, age, disability, or union membership status.

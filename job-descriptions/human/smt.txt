@@ -1,0 +1,39 @@
+SportsMEDIA Technology (SMT) Jacksonville-based event services team provides on-site network building and administration. They also provide IPTV services to support our clients and their various sponsors. We service sporting events all over the world such as The Masters, Wimbledon, U.S. Open, Boston Marathon, Crossfit Games, and many more.
+
+The Event Network Support Intern will be exposed to all elements of our Event Technical Services (ETS) department. This includes network cabling, troubleshooting, video streaming, and various other skills and services. Interns will work directly with the ETS team as well as other departments within our organization to provide the best experience possible for our clients.
+
+This is a paid, hourly internship that requires in-office support at our Jacksonville, FL location as well as international/domestic travel. The hours for this position range from 30-60 per week depending on the event you are servicing. This internship is available for the spring or summer term and can be used for course credit if needed.
+
+
+YOUR DAILY IMPACT AT SMT
+
+    Basic Switch Connectivity and Deployment: Set up and deploy network switches using Cisco and Netgear equipment, gaining foundational knowledge in network infrastructure.
+    Wireless Network Principles: Gain foundational knowledge of wireless networks, including the deployment of bridges and mesh networks over large areas like golf courses and event sites.
+    Network Cabling: Get hands-on experience with different types of fiber optic and CAT5e cables, connectors, applications, and deployment methods.
+    Troubleshooting: Develop your problem-solving skills by troubleshooting issues related to physical, data link, and network layers, including common problems like bad crimps, distance limitations, and more.
+    Video Streaming and Digital Signage: Gain exposure to the world of IPTV systems and LED displays, learning about IP encoding/decoding methods.
+    Windows Desktop Support: Assist with various Windows 10 support requests, including network connectivity, printing, and IP configuration.
+    Network Administration: Learn basic network administration tasks on Microsoft Windows Server platforms (2016/2019), including domain policies, DHCP, and DNS.
+    Deployment Automation: Get acquainted with desktop reimaging and deployment automation methods like Symantec Ghost and Sysprep.
+
+
+WHAT YOU BRING TO SMT
+
+    Pursuing or completed an undergraduate degree with a focus in Information Technology, Systems Networking, Computer Science, or related field.
+    Minimum 3.0 GPA (preferred).
+    Basic understanding of technologies described in responsibilities above.
+    Proficiency in Microsoft Office applications (Word, Excel, Teams).
+    Excellent written and verbal communication skills.
+    Work both independently and in a team.
+    Quickly learn and apply new technologies.
+    Must be able to lift 50-75 pounds on a daily basis.
+    Ability to obtain a passport and travel to sporting events for 7-21 days.
+
+WHAT SMT CAN OFFER YOU
+
+    Wage: $12-$18 an hour
+    Travel is paid for and per diem is provided.
+    A supportive and collaborative learning environment.
+    Hands-on experience with cutting-edge network technology.
+    Opportunities for professional growth and development.
+    Networking with industry professionals.

@@ -1,0 +1,14 @@
+Now consider the following TypeScript Interface for the JSON schema:
+
+interface ProjectExperience {
+    name: string;
+    location: string;
+    date: string;
+    description: string;
+}
+
+interface ProjectExperiences {
+    projects: ProjectExperience[];
+}
+
+Create an array of ProjectExperience section according to the ProjectExperiences schema using the resume. On the response, include only the JSON.

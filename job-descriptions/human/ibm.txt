@@ -1,0 +1,12 @@
+Remote Python Developer
+Introduction Software Developers at IBM are the backbone of our strategic initiatives to design, code, test, and provide industry-leading solutions that make the world run today - planes and trains take off on time, bank transactions complete in the blink of an eye and the world remains safe because of the work our software developers do. Whether you are working on projects internally or for a client, software development is critical to the success of IBM and our clients worldwide. At IBM, you will use the latest software development tools, techniques and approaches and work with leading minds in the industry to build solutions you can be proud of. Your Role and Responsibilities IBM is tasked with creating mission critical enterprise level systems for a nationally known bank. This Python Developer will help with both UI development and software Solution design but also big dataprocesses. Required Technical and Professional Expertise Good Programming skills for Python, shell scripting, Pyspark. Hands on experience for Big data Techs- Spark, Hive, Yarn. Proactively work on the designing of the application. Good Communication skills. Preferred Technical and Professional Expertise Ability to learn Web UI to build a UI interface, experience with Python Django/Flask is preferred.
+Salary Range:
+$80K -- $100K
+Minimum Qualification
+Systems Architecture & Engineering, Software DevelopmentEstimated Salary: $20 to $28 per hour based on qualifications.
+
+    ID#: 1140224629
+    Location: San Francisco, CA, 94102, USA
+
+    Type: Other
+    Company: IBM
