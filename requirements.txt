@@ -1,3 +1,6 @@
 rendercv
 openai
 tiktoken
+langchain
+qdrant-client
+python-dotenv
