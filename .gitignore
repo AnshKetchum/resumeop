@@ -9,5 +9,9 @@ output
 # Intermediate generations
 resume_int.json
 
-#Testing
+# API Generations
+remote-profile
+conversations
+
+# Testing
 .tox

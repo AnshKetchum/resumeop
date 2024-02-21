@@ -4,3 +4,7 @@ tiktoken
 langchain
 qdrant-client
 python-dotenv
+
+# If you want to use the chat interface instead of the openai api
+webdriver-manager
+selenium

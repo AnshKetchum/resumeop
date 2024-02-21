@@ -10,7 +10,10 @@ import openai
 
 from dotenv import load_dotenv
 
+from LLM import OpenAIChatAPI, OpenAIBackendAPI
+
 load_dotenv()
+
 
 # Configure backend if we want to go local
 MODEL = os.getenv('OPENAI_MODEL', "gpt-3.5-turbo-1106")
@@ -423,7 +426,15 @@ def sanitize_for_latex(s: str):
     return s.strip().replace("$", "").replace("%", " percent")
 
 
-def resume_text_optimize(job_description, resume_string):
+def parse_json_garbage(s):
+    s = s[next(idx for idx, c in enumerate(s) if c in "{["):]
+    try:
+        return json.loads(s)
+    except json.JSONDecodeError as e:
+        return json.loads(s[:e.pos])
+
+
+def resume_text_optimize(job_description, resume_string, llm: OpenAIChatAPI, ITERATIONS=1):
 
     start_prompt = """
         Act as the hiring manager for this job. 
@@ -444,58 +455,20 @@ def resume_text_optimize(job_description, resume_string):
         Now, implement any feedback you propose for the resume
     """
 
-    finish_prompt = """
-        Output the resume in the format exactly specified below. No other text should be written:
-
-        Summary 
-        {{summary}}
-
-        Education
-        {{education}}
-
-        Work Experience
-        {{works}}
-
-        Project Experience
-        {{projects}}
-
-    """
-
     work_json_prompt = load_prompt_string('prompts/json/work.prompt')
     project_json_prompt = load_prompt_string('prompts/json/project.prompt')
     skills_json_prompt = load_prompt_string('prompts/json/skills.prompt')
     summary_json_prompt = load_prompt_string('prompts/json/summary.prompt')
 
-    def generate(messages) -> str:
-        response = openai.chat.completions.create(
-            model=MODEL,
-            messages=messages,
-            temperature=0.7,
-            presence_penalty=0,
-            frequency_penalty=0.1
-        )
-
-        generated_texts = [
-            choice.message.content.strip() for choice in response.choices
-        ]
-
-        return generated_texts[0]
-
     # Refinement loop
-    messages = [{
-        'role': 'system',
-        'content': start_prompt.format(job_description=job_description, resume_string=resume_string)
-    }]
+    p = start_prompt.format(
+        job_description=job_description, resume_string=resume_string.strip()).strip()
+
+    llm.prompt_and_response(p)
 
     # Iterate until we're done
-    for i in range(25):
-        messages.append({
-            'role': 'system',
-            'content': continue_prompt
-        })
-
-        print("Attempting to continue")
-        continue_response = generate(messages)
+    for i in range(ITERATIONS):
+        continue_response = llm.prompt_and_response(continue_prompt)
 
         print("\n\n")
         print(continue_response)
@@ -504,91 +477,44 @@ def resume_text_optimize(job_description, resume_string):
         if not continue_response.startswith("Yes"):
             break
 
-        messages.append({
-            'role': 'assistant',
-            'content': continue_response,
-        })
-
         # If yes, implement the feedback.
-        messages.append({
-            'role': 'system',
-            'content': implementation_prompt,
-        })
-
-        # Grab refined resume
-        refined_resume_response = generate(messages)
-        messages.append({
-            'role': 'assistant',
-            'content': refined_resume_response,
-        })
+        refined_resume_response = llm.prompt_and_response(
+            implementation_prompt)
 
         print()
         print(refined_resume_response)
         print("\n\n")
 
     # Turn the optimized work section into JSON
-    messages.append({
-        'role': 'system',
-        'content':  work_json_prompt
-    })
+    resp = llm.prompt_and_response(work_json_prompt)
 
-    resp = generate(messages)
-    work_json = json.loads(resp.strip(
-        "```").strip('json'))["works"]
+    print(resp)
+
+    work_json = parse_json_garbage(resp)
+    work_json = work_json["works"]
 
     for w in work_json:
         w["highlights"] = [sanitize_for_latex(w["description"])]
 
-    messages.append({
-        'role': 'assistant',
-        'content': resp,
-    })
-
     # Convert the project section into JSON
-    messages.append({
-        'role': 'system',
-        'content':  project_json_prompt
-    })
-    resp = generate(messages)
-    project_json = json.loads(resp.strip(
-        "```").strip('json'))
+    resp = llm.prompt_and_response(project_json_prompt)
+    project_json = parse_json_garbage(resp)
 
     project_json = project_json["projects"]
 
     for p in project_json:
         p["highlights"] = [sanitize_for_latex(p["description"])]
 
-    messages.append({
-        'role': 'assistant',
-        'content': resp,
-    })
-
     # Convert skills into JSON
-    messages.append({
-        'role': 'system',
-        'content': skills_json_prompt
-    })
-    resp = generate(messages)
-    skills_json = json.loads(resp.strip(
-        "```").strip('json'))
+    resp = llm.prompt_and_response(skills_json_prompt)
+    skills_json = parse_json_garbage(resp)
 
     skills_json = [{"name": s['topic'], "details": s['name']}
                    for s in skills_json["skills"]]
-    messages.append({
-        'role': 'assistant',
-        'content': resp,
-    })
 
     # Convert summary
-    messages.append({
-        'role': 'system',
-        'content': summary_json_prompt
-    })
-    resp = generate(messages)
-    messages.append({
-        'role': 'assistant',
-        'content': resp,
-    })
+    resp = sanitize_for_latex(llm.prompt_and_response(summary_json_prompt).replace(
+        "\n", "").strip())
 
     print(resp)
 
@@ -597,8 +523,10 @@ def resume_text_optimize(job_description, resume_string):
 
 # Work experiences pipeline
 
+# Switch to OpenAIChatAPI() if you want to use the experimental chat API -- note that none of your strings can contain this character: -> " <- .
+llm = OpenAIChatAPI()
 resume_string = get_resume_in_text(info_dct)
-optimized_sections = resume_text_optimize(JOB_DESCRIPTION, resume_string)
+optimized_sections = resume_text_optimize(JOB_DESCRIPTION, resume_string, llm)
 
 info_dct["work_experiences"] = optimized_sections["works"]
 print(info_dct["work_experiences"])
@@ -622,3 +550,6 @@ with open('experiences2.json', 'w') as f:
 
 print("Generating resume", JOB_DESCRIPTION)
 generate_resume(info_dct, JOB_DESCRIPTION)
+print("Done.")
+
+llm.quit()
