@@ -5,8 +5,33 @@ import openai
 from chatgpt_selenium_automation.handler.chatgpt_selenium_automation import ChatGPTAutomation
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Formal Abstract class
+from abc import ABC, abstractmethod
 
-class OpenAIBackendAPI:
+
+class LLMAPI:
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def generate(self):
+        pass
+
+    @abstractmethod
+    def messages(self):
+        pass
+
+    @abstractmethod
+    def add_human_prompt(self, human_prompt: str):
+        pass
+
+    @abstractmethod
+    def add_message(self, role: str, content: str):
+        pass
+
+
+class OpenAIBackendAPI(LLMAPI):
     """
     A rough API that can serve as a backend for 
     any API that implements OpenAI's v1 standards.
@@ -64,7 +89,7 @@ class OpenAIBackendAPI:
         pass
 
 
-class OpenAIChatAPI:
+class OpenAIChatAPI(LLMAPI):
     """
     An API that directly interfaces with the Chat UI OpenAI has (chat.openai.com) to 
     send and receive messages. Zero API costs, nada yadda yadda.
