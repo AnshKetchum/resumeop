@@ -23,7 +23,7 @@ pip install requirements.txt
 
 #### Step 1: Environment 
 
-Visit openai's website, and obtain an API key. Then, create an env file with the following content:
+Visit openai's website, and [obtain an API key](https://www.youtube.com/watch?v=EQQjdwdVQ-M). Then, create an env file with the following content:
 ```bash
 OPENAI_API_KEY="YOUR_API_KEY_HERE"
 JOB_DESCRIPTION_FILEPATH="JOB_DESCRIPTION.txt"
