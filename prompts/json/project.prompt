@@ -11,4 +11,4 @@ interface ProjectExperiences {
     projects: ProjectExperience[];
 }
 
-Create an array of ProjectExperience section according to the ProjectExperiences schema using the resume. On the response, include only the JSON.
+Create an array of ProjectExperience section exactly according to the ProjectExperiences schema using the resume. On the response, include only the JSON. Make sure to include every single attribute listed above in each project experience.

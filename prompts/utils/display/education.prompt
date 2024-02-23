@@ -1,2 +1,2 @@
-{university_name} | {grad_year}
+{degree_type}, {university_name} | {grad_year}
 Relevant Coursework: {coursework}
