@@ -4,11 +4,11 @@ interface ProjectExperience {
     name: string;
     location: string;
     date: string;
-    description: string;
+    highlights: string[];
 }
 
 interface ProjectExperiences {
     projects: ProjectExperience[];
 }
 
-Create an array of ProjectExperience section exactly according to the ProjectExperiences schema using the resume. On the response, include only the JSON. Make sure to include every single attribute listed above in each project experience, especially the description string attribute.
+Create an array of ProjectExperience section exactly according to the ProjectExperiences schema using the resume. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down. The start and end date strings must be in YYYY-MM-DD, YYYY-MM, or YYYY format.

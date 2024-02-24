@@ -32,10 +32,20 @@ def generate_resume(info: dict, job_description: str):
     # Build the personal projects section
     if "project_experiences" in info:
         personal_projects = info["project_experiences"]
-        print(personal_projects)
         cv_out["personal_projects"] = personal_projects
 
     # TODO - smaller item: add certifications
+    if "certificates" in info:
+        certificates = info["certificates"]
+        cv_out["certificates"] = certificates
+
+    if "publications" in info:
+        publications = info["publications"]
+        cv_out["publications"] = publications
+
+    if "custom_sections" in info:
+        custom_sections = info["custom_sections"]
+        cv_out["custom_sections"] = custom_sections
 
     # Build the skills section
     cv_out["skills"] = info["skills"]
@@ -60,13 +70,13 @@ def get_resume_in_text(info_dct):
         degree_type=edu["study_type"],
         university_name=edu["institution"],
         grad_year=f'{edu["start_date"]} - {edu["end_date"]}',
-        coursework=",".join(edu["relevant_coursework"])
+        coursework=", ".join(edu["relevant_coursework"])
     ) for edu in info_dct["education"]])
 
     works = '\n\n'.join([workp.format(
         company=work["company"],
         role=work["position"],
-        time=f'{work["experience_start"]} - {work["experience_end"]}',
+        time=f'{work["start_date"]} - {work["end_date"]}',
         experience=work["description"],
         location=work["location"],
     ) for work in info_dct["work_experiences"]])
@@ -74,7 +84,7 @@ def get_resume_in_text(info_dct):
     projects = '\n\n'.join([projectp.format(
         title=proj["name"],
         date=proj["date"],
-        experience='\n'.join(proj["highlights"]),
+        experience=proj["description"],
     ) for proj in info_dct["project_experiences"]])
 
     return resumep.format(
@@ -151,7 +161,7 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
     project_json = project_json["projects"]
 
     for p in project_json:
-        p["highlights"] = [sanitize_for_latex(p["description"])]
+        p["highlights"] = [sanitize_for_latex(o) for o in p["highlights"]]
 
     # Convert skills into JSON
     resp = llm.prompt_and_response(skills_json_prompt)
