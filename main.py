@@ -68,6 +68,7 @@ def get_resume_in_text(info_dct):
         role=work["position"],
         time=f'{work["experience_start"]} - {work["experience_end"]}',
         experience=work["description"],
+        location=work["location"],
     ) for work in info_dct["work_experiences"]])
 
     projects = '\n\n'.join([projectp.format(
@@ -84,7 +85,7 @@ def get_resume_in_text(info_dct):
     )
 
 
-def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS=25):
+def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS=2):
 
     start_prompt = """
         Act as the hiring manager for this job. 
@@ -97,13 +98,9 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
 
     """
 
-    continue_prompt = """
-        As the hiring manager, do you think that you can improve this resume's content substantially more? It's okay if not. I'd prefer you to start with a hard Yes or No. If Yes, list all the feedback you have.
-    """
+    continue_prompt = """As the hiring manager, do you think that you can improve this resume's work experiences and project experiences substantially more to tailor it closer to the job description? It's okay if not. I'd prefer you to start with a hard Yes or No. If Yes, list all the feedback you have. That means, that for any description, focus on concisely highlighting the most relevant results first, and then crafting it in a concise manner that highlights impact and displays skills that would be relevant to the job. Remember that a resume can be improved if the content in the resume can be adjusted to more closely focus on the task the job description focuses on. """
 
-    implementation_prompt = """
-        Now, implement any feedback you propose for the resume
-    """
+    implementation_prompt = """Now, show us how you would improve the resume. Rewrite the resume, and make sure to implement all feedback you proposed for the resume descriptions. Now, whenever we refer to resume in future conversations, we are referring to the latest refined version."""
 
     work_json_prompt = load_prompt_string('prompts/json/work.prompt')
     project_json_prompt = load_prompt_string('prompts/json/project.prompt')
@@ -131,20 +128,21 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
         refined_resume_response = llm.prompt_and_response(
             implementation_prompt)
 
-        print()
+        print("REFINED")
         print(refined_resume_response)
         print("\n\n")
 
     # Turn the optimized work section into JSON
     resp = llm.prompt_and_response(work_json_prompt)
 
+    # TODO: bake in some more general skills to even out the resume
     print(resp)
 
     work_json = parse_json_garbage(resp)
     work_json = work_json["works"]
 
     for w in work_json:
-        w["highlights"] = [sanitize_for_latex(w["description"])]
+        w["highlights"] = [sanitize_for_latex(o) for o in w["highlights"]]
 
     # Convert the project section into JSON
     resp = llm.prompt_and_response(project_json_prompt)
@@ -159,7 +157,7 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
     resp = llm.prompt_and_response(skills_json_prompt)
     skills_json = parse_json_garbage(resp)
 
-    skills_json = [{"name": s['topic'], "details": s['name']}
+    skills_json = [{"name": s['topic'], "details": ', '.join(s['name'])}
                    for s in skills_json["skills"]]
 
     # Convert summary
@@ -177,7 +175,7 @@ load_dotenv()
 # ----- BEGIN USER PARAMETERS -----
 
 # Switch to OpenAIChatAPI() if you want to use the experimental chat API -- note that none of your strings can contain this character: -> " <- .
-llm = OpenAIBackendAPI()  # OpenAIBackendAPI()
+llm = OpenAIBackendAPI()
 
 # USER: CHANGE THE JOB NAME FOR MORE SPECIFIC RESEARCH / BETTER RESULES
 JOB_NAME = 'ibm'
@@ -201,7 +199,12 @@ optimized_sections = resume_text_optimize(JOB_DESCRIPTION, resume_string, llm)
 # Post generation
 info_dct["work_experiences"] = optimized_sections["works"]
 info_dct["project_experiences"] = optimized_sections["projects"]
-info_dct["skills"] = optimized_sections["skills"]
+
+try:
+    info_dct["skills"] = optimized_sections["skills"]
+except:
+    print(optimized_sections)
+
 info_dct["summary"] = optimized_sections["summary"]
 
 if os.path.exists('test'):

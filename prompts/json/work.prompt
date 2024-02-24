@@ -6,11 +6,11 @@ interface WorkExperience {
     position: string;
     company: string;
     location: string;
-    description: string;
+    highlights: string[];
 }
 
 interface WorkExperiences {
     works: WorkExperience[];
 }
 
-Create an array of WorkExperience section according to the WorkExperiences schema using the resume. On the response, include only the JSON.
+Create an array of WorkExperience section according to the WorkExperiences schema using the latest resume you created. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down.
