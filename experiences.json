@@ -6,54 +6,47 @@
         "location" : "San Francisco, California",
         "social_networks" : [
             {"network" : "GitHub", "username": "AnshKetchum" },
-            {"network" : "LinkedIn", "username": "AnshKetchum" }
-        ]
+            {"network" : "LinkedIn", "username": "ansh-chaurasia-65063a1b4" }
+        ],
+        "website": "https://bento.me/iansh"
     },
-
+    "summary" : "Active hardware and software level researcher in software and hardware AI labs at Berkeley; 5 years of experience in machine learning model research & development and C/C++ level hardware optimization; Generalist AI experience from past work in AI software companies, and large scale hardware companies; Patent involving AI sports analytics, and research publication in medical computer vision",
     "project_experiences" : [
         {
-            "name": "AI Art Generation ",
+            "name": "Near Memory Computing",
             "location": "Remote",
-            "date": "Fall 2022",
+            "date": "Jan 2024",
             "highlights": [
-                "Fine-tuned Stability AI’s Stable Diffusion XL text-to-image model using the Low Rank Adaptation (LoRA) technique. Used it to create concept anime art that was subsequently sold as an NFT, and vector logos to cover branding projects and creative concepts."
+                "Implementing operations to speed up ResNet50 on RISCV system-on-chip using Berkeley’s Chipyard and Chisel framework. Implementing near memory computing controllers to speed up memory access and reduce unnecessary scratchpad usage."
+            ]
+            
+        },
+        {
+            "name": "Human Brain Neuron Generation",
+            "location": "University of California, San Francisco",
+            "date": "Spring 2023",
+            "highlights": [
+                "Implemented SimCLR, BYOL, and DINO state of the art self supervised learning computer vision techniques to build strong AI representations, and visualized model training and evaluation using MLFlow."
             ]
         },
         {
-            "name": "Voice Controlled AI Robot",
-            "location": "Remote",
-            "date": "Spring 2023",
-            "highlights": [
-                "Built a robot using embedded system like the Arduino, and then leveraged data science methods like PCA to perform dimensionality reduction, and voice matching to enable it to respond to voice commands."
+            "name": "AI Application Job Bot",
+            "location" : "Remote",
+            "date" : "December 2023",
+            "highlights" : [
+                "Built a bot leveraging retrieval augmented generation (RAG) using OpenAI’s gpt-3 & 4 models, LangChain, and the Qdrant vector database to automatically search for jobs, align your resume to the job, and answer any questions. Leveraged prompt engineering techniques to reduce large language model hallucination, and automation techniques like Selenium and BeautifulSoup to submit applications. Resulted in a 10% increase in views, and 5% increase in job response rate."
             ]
         }
     ],
 
     "work_experiences": [
         {
-            "experience_start": "5-2022",
-            "experience_end": "12-2023",
-            "position" : "Founding Engineer",
-            "company" : "flockfysh Inc",
+            "experience_start": "6-2019",
+            "experience_end": "7-2022",
+            "position" : "AI Software + Hardware Intern",
+            "company" : "GameLore Inc",
             "location" : "Remote",
-            "description": "Built the founding software and concept for an AI system. Led the technical side of the pitch and secured the company a pre-seed round at a $1B valuation. Published an open-source package viewable on PyPI (refyre) to streamline local file management and built a command-line interface allowing customers to access MongoDB and DigitalOcean data.",
-            "highlights" : [
-            ],
-            "keywords" : [
-                "",
-                ""
-            ],
-            "metadata" : [
-                "Question: When did you do X @ flockfysh? : Answer --> 48 days ago ..."
-            ]
-        },
-        {
-            "experience_start": "5-2022",
-            "experience_end": "12-2023",
-            "position" : "AI Software Engineer",
-            "company" : "Gamelore Inc",
-            "location" : "Remote",
-            "description": "Utilized TensorFlow 2.0 to contribute to an Artificial Intelligence (AI) based product that automate Sports (tennis), Dance, Yoga, and Physiotherapy coaching. Developed YOLO model and trained to perform action recognition with 85% accuracy. Developed ball detection algorithms in C++ and patented the technology which is utilized for sports like tennis."  ,
+            "description": "Implemented AI-based ball tracking algorithms using TensorFlow. Developed YOLO model and trained to perform action recognition with 85% accuracy. Utility Patent on final algorithm. Used AMD’s profiling technology to locate GPU throttling code on NVIDIA’s Jetson board. Wrote C++ CUDA kernels to parallelize atomic operations.",
             "highlights" : [
             ],
             "keywords" : [
@@ -63,15 +56,31 @@
             "metadata" : [
             ]
         },
-
-
         {
             "experience_start": "5-2022",
-            "experience_end": "12-2023",
+            "experience_end": "8-2022",
             "position" : "AI Software Engineer",
             "company" : "Ambrego Inc",
             "location" : "Remote",
-            "description": "Worked on software development using Python to automate the process of calculating the guide RNAs for various proteins. The process utilized contemporary biotechnology AI software such as AlphaFold, Equidock, and Equibind for accuracy and prediction.",
+            "description": "Implemented research papers from MIT’s Zhang Lab to compute guide RNAs for CRISPR usage. Leveraged AI algorithms like AlphaFold to visualize PDBs of downstream algorithm usage, leading to 2-3 month speedup towards initial clinical trials.",
+            "highlights" : [
+            ],
+            "keywords" : [
+                "",
+                ""
+            ],
+            "metadata" : [
+            ]
+        },
+
+
+        {
+            "experience_start": "5-2022",
+            "experience_end": "12-2023",
+            "position" : "Founding & Lead AI Engineer",
+            "company" : "flockfysh Inc",
+            "location" : "Remote",
+            "description": "Built core computer vision system in PyTorch on technology to auto generate large scale training datasets using diffusion models from small input of training data + human feedback. Leveraged a reinforcement-learning based neural architecture search optimizer. Implemented recent papers. Demo led to seed funding from angel investors.",
             "highlights" : [
             ],
             "keywords" : [
@@ -87,12 +96,12 @@
         {
             "institution" : "UC Berkeley",
             "type" : "degree", 
-            "start_date" : "2014",
+            "start_date" : "2022",
             "area" : "EECS",
-            "end_date" : "2015",
+            "end_date" : "2025",
             "relevant_coursework" : ["Computer architecture", "Computer Security", "Integrated Circuit / Chip Design", "Machine Learning", "Mathematical Optimization Models", "Discrete Math and Probability Theory", "Structure and Interpretation of Computer Programs", "Designing Information Devices and Systems I", "Algorithms & Complexity"],
             "show_for_type" : "all",
-            "gpa" : "4.5 UW",
+            "gpa" : "3.8 UW",
             "study_type" : "BS"
         }
 

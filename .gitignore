@@ -8,6 +8,9 @@ output
 
 # Intermediate generations
 resume_int.json
+experiences2.json
+experiences.json
+chatgpt_selenium_automation
 
 # API Generations
 remote-profile

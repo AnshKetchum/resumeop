@@ -2,11 +2,11 @@ Now consider the following TypeScript Interface for the JSON schema:
 
 interface TechnicalSkill {
     topic: string;
-    name: string;
+    name: string[];
 }
 
 interface TechnicalSkills {
     skills: TechnicalSkill[];
 }
 
-Create an array of TechnicalSkill section according to the TechnicalSkills schema using the resume. On the response, include only the JSON.
+Create an array of TechnicalSkill section according to the TechnicalSkills schema using the latest resume you created. On the response, include only the JSON. Limit the broader topics to 3 at most. Add at least 5 technical skill names, and up to 20 skill names per topic.

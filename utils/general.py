@@ -3,7 +3,7 @@ import re
 
 
 def sanitize_for_latex(s: str) -> str:
-    return s.strip().replace("$", "").replace("%", " percent")
+    return s.strip().replace("$", "").replace("%", " percent").replace("&", " and ")
     """Sanitizes a string so that it can be properly compiled in TeX.
     Escapes the most common TeX special characters: ~^_#%${}
     Removes backslashes.
