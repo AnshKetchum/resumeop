@@ -55,6 +55,9 @@ Copy over your job description into `JOB_DESCRIPTION.txt`. If `JOB_DESCRIPTION_F
 #### Step 2: Running the Program
 Run the program with `python main.py`. You will see the `output` folder become populated with various file, and a single `.pdf` file containing your resume.
 
+## Making Edits to your Resume
+1. Open up `resume_int.json` (the intermediate resume), and make the modifications you'd like to make.
+2. Regenerate the resume with `rendercv render resume_int.json`
 
 ### Miscellaneous
 Added a `Makefile` for misc operations, like cleanup. To clean up old files, run `make clean`.
