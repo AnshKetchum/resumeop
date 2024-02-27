@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 from utils.LLM import OpenAIChatAPI, OpenAIBackendAPI, LLMAPI
 from utils.general import sanitize_for_latex, load_prompt_string, load_string, parse_json_garbage
 
-from personal.experimental import generate_artificial_supplement_experiences
-
 
 def generate_resume(info: dict, job_description: str):
 
