@@ -12,13 +12,6 @@ An optimizer that takes a job description, a bank of experiences, and tailors yo
 - OpenAI compatible -- uses OpenAI's GPT models, but the backend can be swapped out
 for an open source model with a couple minutes of effort.
 
-## Installation
-The installation is designed to be fast and easy, via `pip`.
-
-```
-pip install requirements.txt
-```
-
 ## Setup
 
 ### Step 1: Repo
@@ -26,6 +19,7 @@ pip install requirements.txt
 2. `cd` into the base directory of the folder
 3. Run `make install`, or the commands under the `install` section in Makefile to initialize
 all the submodules.
+4. Install the requirements. `pip install -r requirements.txt`
 
 #### Step 2: Environment 
 
