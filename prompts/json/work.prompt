@@ -1,8 +1,8 @@
 Now consider the following TypeScript Interface for the JSON schema:
 
 interface WorkExperience {
-    experience_start: string;
-    experience_end: string;
+    start_date: string;
+    end_date: string;
     position: string;
     company: string;
     location: string;
@@ -13,4 +13,4 @@ interface WorkExperiences {
     works: WorkExperience[];
 }
 
-Create an array of WorkExperience section according to the WorkExperiences schema using the latest resume you created. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down.
+Create an array of WorkExperience section according to the WorkExperiences schema using the latest resume you created. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down. The start and end date strings must be in YYYY-MM-DD, YYYY-MM, or YYYY format.

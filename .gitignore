@@ -9,13 +9,17 @@ output
 # Intermediate generations
 resume_int.json
 experiences2.json
-experiences.json
 chatgpt_selenium_automation
 
 # API Generations
 remote-profile
 conversations
 
+# Web Researcher
+Research_GPT
+
 # Testing
 .tox
 personal
+private
+job-descriptions

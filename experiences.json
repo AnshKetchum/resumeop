@@ -16,79 +16,48 @@
             "name": "Near Memory Computing",
             "location": "Remote",
             "date": "Jan 2024",
-            "highlights": [
-                "Implementing operations to speed up ResNet50 on RISCV system-on-chip using Berkeley’s Chipyard and Chisel framework. Implementing near memory computing controllers to speed up memory access and reduce unnecessary scratchpad usage."
-            ]
-            
+            "description" : "Implementing operations to speed up ResNet50 on RISCV system-on-chip using Berkeley’s Chipyard and Chisel framework. Implementing near memory computing controllers to speed up memory access and reduce unnecessary scratchpad usage."
         },
         {
             "name": "Human Brain Neuron Generation",
             "location": "University of California, San Francisco",
             "date": "Spring 2023",
-            "highlights": [
-                "Implemented SimCLR, BYOL, and DINO state of the art self supervised learning computer vision techniques to build strong AI representations, and visualized model training and evaluation using MLFlow."
-            ]
+            "description" : "Implemented SimCLR, BYOL, and DINO state of the art self supervised learning computer vision techniques to build strong AI representations, and visualized model training and evaluation using MLFlow."
         },
         {
             "name": "AI Application Job Bot",
             "location" : "Remote",
             "date" : "December 2023",
-            "highlights" : [
-                "Built a bot leveraging retrieval augmented generation (RAG) using OpenAI’s gpt-3 & 4 models, LangChain, and the Qdrant vector database to automatically search for jobs, align your resume to the job, and answer any questions. Leveraged prompt engineering techniques to reduce large language model hallucination, and automation techniques like Selenium and BeautifulSoup to submit applications. Resulted in a 10% increase in views, and 5% increase in job response rate."
-            ]
+            "description" : "Built a bot leveraging retrieval augmented generation (RAG) using OpenAI’s gpt-3 & 4 models, LangChain, and the Qdrant vector database to automatically search for jobs, align your resume to the job, and answer any questions. Leveraged prompt engineering techniques to reduce large language model hallucination, and automation techniques like Selenium and BeautifulSoup to submit applications. Resulted in a 10% increase in views, and 5% increase in job response rate."
         }
     ],
 
     "work_experiences": [
         {
-            "experience_start": "6-2019",
-            "experience_end": "7-2022",
+            "start_date": "6-2019",
+            "end_date": "7-2022",
             "position" : "AI Software + Hardware Intern",
             "company" : "GameLore Inc",
             "location" : "Remote",
-            "description": "Implemented AI-based ball tracking algorithms using TensorFlow. Developed YOLO model and trained to perform action recognition with 85% accuracy. Utility Patent on final algorithm. Used AMD’s profiling technology to locate GPU throttling code on NVIDIA’s Jetson board. Wrote C++ CUDA kernels to parallelize atomic operations.",
-            "highlights" : [
-            ],
-            "keywords" : [
-                "",
-                ""
-            ],
-            "metadata" : [
-            ]
+            "description": "Implemented AI-based ball tracking algorithms using TensorFlow. Developed YOLO model and trained to perform action recognition with 85% accuracy. Utility Patent on final algorithm. Used AMD’s profiling technology to locate GPU throttling code on NVIDIA’s Jetson board. Wrote C++ CUDA kernels to parallelize atomic operations."
         },
         {
-            "experience_start": "5-2022",
-            "experience_end": "8-2022",
+            "start_date": "5-2022",
+            "end_date": "8-2022",
             "position" : "AI Software Engineer",
             "company" : "Ambrego Inc",
             "location" : "Remote",
-            "description": "Implemented research papers from MIT’s Zhang Lab to compute guide RNAs for CRISPR usage. Leveraged AI algorithms like AlphaFold to visualize PDBs of downstream algorithm usage, leading to 2-3 month speedup towards initial clinical trials.",
-            "highlights" : [
-            ],
-            "keywords" : [
-                "",
-                ""
-            ],
-            "metadata" : [
-            ]
+            "description": "Implemented research papers from MIT’s Zhang Lab to compute guide RNAs for CRISPR usage. Leveraged AI algorithms like AlphaFold to visualize PDBs of downstream algorithm usage, leading to 2-3 month speedup towards initial clinical trials."
         },
 
 
         {
-            "experience_start": "5-2022",
-            "experience_end": "12-2023",
+            "start_date": "5-2022",
+            "end_date": "12-2023",
             "position" : "Founding & Lead AI Engineer",
             "company" : "flockfysh Inc",
             "location" : "Remote",
-            "description": "Built core computer vision system in PyTorch on technology to auto generate large scale training datasets using diffusion models from small input of training data + human feedback. Leveraged a reinforcement-learning based neural architecture search optimizer. Implemented recent papers. Demo led to seed funding from angel investors.",
-            "highlights" : [
-            ],
-            "keywords" : [
-                "",
-                ""
-            ],
-            "metadata" : [
-            ]
+            "description": "Built core computer vision system in PyTorch on technology to auto generate large scale training datasets using diffusion models from small input of training data + human feedback. Leveraged a reinforcement-learning based neural architecture search optimizer. Implemented recent papers. Demo led to seed funding from angel investors."
         }
     ],
 
@@ -96,9 +65,9 @@
         {
             "institution" : "UC Berkeley",
             "type" : "degree", 
-            "start_date" : "2022",
+            "start_date" : "August 2022",
             "area" : "EECS",
-            "end_date" : "2025",
+            "end_date" : "August 2025",
             "relevant_coursework" : ["Computer architecture", "Computer Security", "Integrated Circuit / Chip Design", "Machine Learning", "Mathematical Optimization Models", "Discrete Math and Probability Theory", "Structure and Interpretation of Computer Programs", "Designing Information Devices and Systems I", "Algorithms & Complexity"],
             "show_for_type" : "all",
             "gpa" : "3.8 UW",
@@ -106,7 +75,18 @@
         }
 
     ],
-
+    "publications" : [
+        {
+            "title": "Melanoma Diagnosis Using Convolutional Neural Networks",
+            "authors": [
+                "Ansh Chaurasia",
+                "Jeremy Irvin"
+            ],
+            "journal" : "JSR",
+            "doi" : "10.47611/harp.20",
+            "date": "2021-02-01"
+        }
+    ],
     "relevant_extracurriculars" : [
         {
             "name" : "",
@@ -123,6 +103,25 @@
             "date": "Fall 2019",
             "highlights": ["Developed and achieved proficiency in building models in the computer vision, natural language processing, and time series domain."]
         }
-    ]
+    ],
 
+    "custom_sections" : [
+        {
+            "title": "Patents",
+            "entry_type": "NormalEntry",
+            "entries" : [
+                {
+                    "name" : "Ball detection and tracking device, system and method",
+                    "location" : "Cupertino, California",
+                    "date" : "2018-06-01",
+                    "highlights" : [
+                        "Conceptually developed the core parabolic estimation algorithm",
+                        "Benchmarked AI options using CMU's OpenPose and TensorFlow"
+                    ],
+                    "url": "https://patents.justia.com/patent/10803598"
+                }
+            ]
+
+        }
+    ]
 }

@@ -1,0 +1,58 @@
+SUMMER 2024 APPLIED AI MODELS INTERN
+
+WHAT YOU DO AT AMD CHANGES EVERYTHING
+We care deeply about transforming lives with AMD technology to enrich our industry,
+our communities, and the world. Our mission is to build great products that accelerate
+next-generation computing experiences – the building blocks for the data center,
+artificial intelligence, PCs, gaming and embedded. Underpinning our mission is the AMD
+culture. We push the limits of innovation to solve the world’s most important challenges.
+We strive for execution excellence while being direct, humble, collaborative, and
+inclusive of diverse perspectives.
+AMD together we advance_
+
+As a Co-op student, you can make an immediate contribution to AMD's next generation
+of technology innovations. We have a dynamic, high-energy work environment, filled
+with expert employees, and unique opportunities for developing your career. You will
+have the opportunity to connect with AMD leaders, receive one-on-one mentorship,
+attend amazing networking events and much more. With AMD, you can get hands-on
+experience that will give you a competitive edge in the workforce.
+Get a jumpstart on an exciting career - apply today!
+
+LOCATION: San Jose, CA
+ONSITE: This role requires the student to work from the San Jose office throughout the
+duration of the Co-op/Intern term.
+
+KEY RESPONSIBILITIES:
+• Research the latest advancements and technologies in Generative AI, designing
+and developing innovative applications aligned with company needs.
+• Study the SOTA generation algorithms and enhance the accuracy and
+performance of existing models.
+• Explore optimized deployment approaches ensuring efficiency in production
+environments.
+• Collaborate with teams, share best practices, and provide guidance and support
+on Generative AI technologies.
+
+PREFERRED EXPERIENCE:
+• Proficiency in at least one deep learning framework (such as TensorFlow,
+PyTorch, etc.) to design, implement, and optimize complex models.
+• Excellent problem-solving and analytical skills, capable of working effectively and
+delivering results under high pressure.
+• Strong communication abilities.
+• Master or above students are preferred
+
+At AMD, your base pay is one part of your total rewards package. Your base pay
+will depend on where your skills, qualifications, experience, and location fit into the
+hiring range for the position. You may be eligible for incentives based upon your role
+such as either an annual bonus or sales incentive. Many AMD employees have the
+opportunity to own shares of AMD stock, as well as a discount when purchasing
+AMD stock if voluntarily participating in AMD’s Employee Stock Purchase Plan.
+You’ll also be eligible for competitive benefits described in more detail here.
+AMD does not accept unsolicited resumes from headhunters, recruitment agencies,
+or fee-based recruitment services. AMD and its subsidiaries are equal opportunity,
+inclusive employers and will consider all applicants without regard to age, ancestry,
+color, marital status, medical condition, mental or physical disability, national origin,
+race, religion, political and/or third-party affiliation, sex, pregnancy, sexual
+orientation, gender identity, military or veteran status, or any other characteristic
+protected by law. We encourage applications from all qualified candidates and will
+accommodate applicants’ needs under the respective laws throughout all stages of
+the recruitment and selection process.
