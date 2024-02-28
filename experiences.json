@@ -65,9 +65,9 @@
         {
             "institution" : "UC Berkeley",
             "type" : "degree", 
-            "start_date" : "2022",
+            "start_date" : "August 2022",
             "area" : "EECS",
-            "end_date" : "2025",
+            "end_date" : "August 2025",
             "relevant_coursework" : ["Computer architecture", "Computer Security", "Integrated Circuit / Chip Design", "Machine Learning", "Mathematical Optimization Models", "Discrete Math and Probability Theory", "Structure and Interpretation of Computer Programs", "Designing Information Devices and Systems I", "Algorithms & Complexity"],
             "show_for_type" : "all",
             "gpa" : "3.8 UW",

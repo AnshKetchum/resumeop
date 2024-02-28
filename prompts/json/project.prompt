@@ -11,4 +11,6 @@ interface ProjectExperiences {
     projects: ProjectExperience[];
 }
 
-Create an array of ProjectExperience section exactly according to the ProjectExperiences schema using the resume. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down. The start and end date strings must be in YYYY-MM-DD, YYYY-MM, or YYYY format.
+Create an array of ProjectExperience section exactly according to the ProjectExperiences schema using the resume. On the response, include only the JSON. Make sure that each individual highlight focuses on a single aspect rather than clumping everything together. Keep in mind the location for each work experience. It won't change from the original one I provided from the start, so copy that down. The start and end date strings must be in YYYY-MM-DD, YYYY-MM, or YYYY format. Make sure the projects are ordered by most relevant to least relevant to the job description. 
+
+If you do not know the location of the project, go ahead and set it to be Remote.

@@ -95,10 +95,10 @@ def get_resume_in_text(info_dct):
     )
 
 
-def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS=2):
+def resume_text_optimize(company_name, job_description, resume_string, llm: LLMAPI, ITERATIONS=2):
 
     start_prompt = """
-        Act as the hiring manager for this job. 
+        Act as the hiring manager for this job. The company is {company_name} 
 
         {job_description}
 
@@ -108,7 +108,13 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
 
     """
 
-    continue_prompt = """As the hiring manager, do you think that you can improve this resume's work experiences and project experiences substantially more to tailor it closer to the job description? It's okay if not. I'd prefer you to start with a hard Yes or No. If Yes, list all the feedback you have. That means, that for any description, focus on concisely highlighting the most relevant results first, and then crafting it in a concise manner that highlights impact and displays skills that would be relevant to the job. Remember that a resume can be improved if the content in the resume can be adjusted to more closely focus on the task the job description focuses on. """
+    company_research_prompt = """Think deeply and clearly about the company, and list out your thoughts. Who is this company, in depth? What are their core values? 
+    
+    Then, go into deeper detail about the use cases the company provides solutions for. Step by step, think about what they would be doing internally that might require this job, or what other customers might be wanting the company to do. Finally, think about why the company might be hiring for this job. You will need to keep all 
+    of this in mind for future conversations.
+    """
+
+    continue_prompt = """As the hiring manager, do you think that you can improve this resume's work experiences and project experiences substantially more to tailor it closer to the company knowledge you found early, and what they may seek through the job description? It's okay if not. I'd prefer you to start with a hard Yes or No. If Yes, list all the feedback you have. That means, that for any description, focus on concisely highlighting the most relevant results first, and then crafting it in a concise manner that highlights impact and displays skills that would be relevant to the job. Make sure to include impact statements with clear, quantiative results. Remember that a resume can be improved if the content in the resume can be adjusted to more closely focus on the task the job description focuses on, or if the description is too high level or does not contain clear action statements with quantative statistics in support. That would mean to remove / streamline irrelevant skills, and concisely elaborate on the more relevant ones"""
 
     implementation_prompt = """Now, show us how you would improve the resume. Rewrite the resume, and make sure to implement all feedback you proposed for the resume descriptions. Now, whenever we refer to resume in future conversations, we are referring to the latest refined version."""
 
@@ -119,9 +125,17 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
 
     # Refinement loop
     p = start_prompt.format(
+        company_name=company_name,
         job_description=job_description, resume_string=resume_string.strip()).strip()
 
     llm.prompt_and_response(p)
+
+    resp = llm.prompt_and_response(company_research_prompt)
+    print("Company Research: ")
+    with open("company_research.txt", "w") as f:
+        print(resp, file=f)
+
+    # Squeeze in some details about the company
 
     # Iterate until we're done
     for i in range(ITERATIONS):
@@ -141,6 +155,9 @@ def resume_text_optimize(job_description, resume_string, llm: LLMAPI, ITERATIONS
         print("REFINED")
         print(refined_resume_response)
         print("\n\n")
+
+    # Post processing
+    generate_artificial_supplement_experiences(refined_resume_response, llm)
 
     # Turn the optimized work section into JSON
     resp = llm.prompt_and_response(work_json_prompt)
@@ -188,7 +205,7 @@ load_dotenv()
 llm = OpenAIBackendAPI()
 
 # USER: CHANGE THE JOB NAME FOR MORE SPECIFIC RESEARCH / BETTER RESULES
-JOB_NAME = 'ibm'
+COMPANY_NAME = os.getenv("JOB_COMPANY_NAME")
 JOB_DESCRIPTION = load_string(os.getenv("JOB_DESCRIPTION_FILEPATH"))
 
 DEFAULT_DESCRIPTION = "REPLACE THESE WORDS WITH THE TEXT OF YOUR JOB DESCRIPTION"
@@ -204,7 +221,8 @@ with open('experiences.json', 'r') as f:
 resume_string = get_resume_in_text(info_dct)
 
 
-optimized_sections = resume_text_optimize(JOB_DESCRIPTION, resume_string, llm)
+optimized_sections = resume_text_optimize(
+    COMPANY_NAME, JOB_DESCRIPTION, resume_string, llm)
 
 # Post generation
 info_dct["work_experiences"] = optimized_sections["works"]

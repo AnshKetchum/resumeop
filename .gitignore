@@ -15,6 +15,10 @@ chatgpt_selenium_automation
 remote-profile
 conversations
 
+# Web Researcher
+Research_GPT
+
 # Testing
 .tox
 personal
+private
