@@ -69,6 +69,17 @@ KeyError: 'description'
 ```
 Re-run the script, it sometimes happens.
 
+### Achieving a ZERO-COST run. 
+The key here is that we will use the existing ChatGPT interface (chat.openai.com) for small scale resumes. It has been tested with 2-3 pages, should work with most resumes unless you've written a literal book. To activate this mode, switch the line 
+
+```
+llm = OpenAIBackendAPI()
+```
+to 
+```
+llm = OpenAIChatAPI()
+```
+You will be prompted to log into ChatGPT. Log in on the window that pops up (the AI can't access your credentials in any way, it'll start it's interactions after you log in), and type 'y' in the interface after doing so. Enjoy being able to use the latest and sweetest AI models for completely free!
 ### Miscellaneous
 Added a `Makefile` for misc operations, like cleanup. To clean up old files, run `make clean`.
 
