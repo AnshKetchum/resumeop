@@ -1,0 +1,3 @@
+[submodule "chatgpt_selenium_automation"]
+	path = chatgpt_selenium_automation
+	url = https://github.com/Michelangelo27/chatgpt_selenium_automation
