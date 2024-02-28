@@ -28,6 +28,7 @@ Visit openai's website, and [obtain an API key](https://www.youtube.com/watch?v=
 ```bash
 OPENAI_API_KEY="YOUR_API_KEY_HERE"
 JOB_DESCRIPTION_FILEPATH="JOB_DESCRIPTION.txt"
+JOB_COMPANY_NAME="COMPANY_NAME_HERE"
 ``` 
 
 *What is an open source, OpenAI backend model?*
@@ -39,6 +40,7 @@ serving large language models. As OpenAI has grown, developers have created proj
 ```bash
 OPENAI_API_KEY="YOUR_API_KEY_HERE"
 JOB_DESCRIPTION_FILEPATH="JOB_DESCRIPTION.txt"
+JOB_COMPANY_NAME="COMPANY_NAME_HERE"
 OPENAI_CUSTOM_API="http://localhost:8080/v1/"
 ``` 
 In this example, we assume that we use the v1 version of OpenAI's API, and that we are locally running it at port 8080 (works without change if you are using localai)
