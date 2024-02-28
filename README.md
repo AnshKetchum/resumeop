@@ -13,6 +13,7 @@ An optimizer that takes a job description, a bank of experiences, and tailors yo
 for an open source model with a couple minutes of effort.
 
 ## Setup
+Tested with python 3.10 so far. Any version above 3.10 (11, 12) or 3.9 should work without much of a problem.
 
 ### Step 1: Repo
 1. Clone the repository in whichever way you see fit.
