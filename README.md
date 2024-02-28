@@ -21,7 +21,13 @@ pip install requirements.txt
 
 ## Setup
 
-#### Step 1: Environment 
+### Step 1: Repo
+1. Clone the repository in whichever way you see fit.
+2. `cd` into the base directory of the folder
+3. Run `make install`, or the commands under the `install` section in Makefile to initialize
+all the submodules.
+
+#### Step 2: Environment 
 
 Visit openai's website, and [obtain an API key](https://www.youtube.com/watch?v=EQQjdwdVQ-M). Then, create an env file with the following content:
 ```bash
@@ -42,7 +48,7 @@ OPENAI_CUSTOM_API="http://localhost:8080/v1/"
 ``` 
 In this example, we assume that we use the v1 version of OpenAI's API, and that we are locally running it at port 8080 (works without change if you are using localai)
 
-#### Step 2: Resume information
+#### Step 3: Resume information
 Edit `experiences.json` with your information.
 
 That's it!
