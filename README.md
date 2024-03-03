@@ -5,7 +5,11 @@
 
 An optimizer that takes a job description, a bank of experiences, and tailors your resume to the job description using AI. Check out an example pdf generated right [here](Ansh_Chaurasia_CV.pdf).
 
-
+## Changelog
+3/2/24
+- Added support for AI generated cover letters! Looking for some feedback on what kind of edits you make post-generation.
+- Progress on integrating in more in-depth web researchers for company recon
+- Planning integrations for follow up messaging through LinkedIn and GMail  
 
 
 ## Features
@@ -60,7 +64,14 @@ Run the program with `python main.py`. You will see the `output` folder become p
 
 ### Making Edits to your Resume
 1. Open up `resume_int.json` (the intermediate resume), and make the modifications you'd like to make.
-2. Regenerate the resume with `rendercv render resume_int.json`
+2. Regenerate the resume with `rendercv render resume_int.json` or, more conveniently `make edit`
+
+### Making Edits to your Cover Letter
+Make sure you run the entire workflow once before attempting to edit the cover letter.
+
+1. Open up the `cover_letters` folder. This will contain all of the information that is used to craft a crisp letter.
+2. Edit `info.json` with the proper company details
+3. Regenerate the resume with `make edit-cover`
 
 ### Common Errors
 ```
@@ -84,7 +95,6 @@ You will be prompted to log into ChatGPT. Log in on the window that pops up (the
 Added a `Makefile` for misc operations, like cleanup. To clean up old files, run `make clean`.
 
 ## TODO:
-
 1. Add additional support, create more documented pathways for running the entire workflow open source!
 2. Add in support for researching, and gathering relevant context / attempting to reasonably infer info about what the company may be delving into to provide extra tailoring information.
 
