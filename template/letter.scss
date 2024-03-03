@@ -1,0 +1,60 @@
+$primary_color: #2c3e50;
+$clear_primary_color: #FFFFFF;
+$sub_title_color: #526c85;
+$link_color: #1abc9c;
+$side_bar_width: 300px;
+
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 2cm;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.recipient {
+  margin-bottom: 1.3cm;
+}
+
+.date {
+  text-align: right;
+  margin-bottom: 0.3cm;
+}
+
+.opening {
+  margin-bottom: 0.6cm;
+}
+
+.main-text {
+  margin-bottom: 1cm;
+}
+
+.closing {
+}
+
+.sender {
+  width: 100%;
+  padding-bottom: 1cm;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $sub_title_color;
+
+  & > .address > span {
+    &:not(:last-child)::after {
+        content: "-";
+        margin: 10px;
+    }
+  }
+
+  & > .contact > span {
+    &:not(:last-child)::after {
+        content: "\00b7";
+        margin: 20px;
+    }
+  }
+}
