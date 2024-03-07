@@ -1,1 +1,40 @@
-REPLACE THESE WORDS WITH THE TEXT OF YOUR JOB DESCRIPTION
+Adobe seeks a Machine Learning Engineer to enhance customer experiences through AI and generative technologies. This is an exciting internship opportunity inside Adobe Firefly’s applied research organization. You will be su r rounded by amazing talents who build the Firefly family of models from research inception all the way to production. We offer internship roles situated at different stages of the development pipeline from fundamental research to advanced development to production engineering directly shap ing the training and integration of Firefly production models. Your role will center on pioneering models and applications that shape the future of technology in the realms of images, videos, audio, and 3D. Join us in reshaping the future of technology and customer experiences at Adobe!
+
+
+What You’ll Do
+
+
+     Work towards results-oriented research goals, while identifying intermediate achievements. 
+     Contribute to research and advanced development that can be applied to Adobe product development. 
+     Help integrating novel research work into Adobe Firefly product. 
+     Lead and collaborate on projects across different teams. 
+
+
+What You Need to Succeed
+
+
+     Currently enrolled full time and pursuing a Master’s or PhD in Computer Science, Computer Engineering, Electrical Engineer, machine learning, AI, computer science, statistics, or scene semantic understanding or equivalent experience required 
+     1 + years of experience in computer vision or natural languag e processing or machine learning 
+     Some experience in Generative AI 
+     Experience communicating research for public audiences of peers. 
+     Experience working in teams. 
+     Knowledge in Python and typical machine learning development toolkits . 
+     Ability to participate in a full-time internship between May-September . 
+
+
+If you’re looking to make an impact, Adobe’s the place for you. Discover what our employees are saying about their career experiences on the Adobe Life blog and explore the meaningful benefits we offer.
+
+
+Adobe is an equal opportunity employer. We welcome and encourage diversity in the workplace regardless of race, gender, sexual orientation, gender identity, disability or veteran status.
+
+
+Our compensation reflects the cost of labor across several  U.S. geographic markets, and we pay differently based on those defined markets. The U.S. pay range for this position is $45.00 -- $55.00 hourly. Your recruiter can share more about the specific pay rate for your job location during the hiring process.
+
+
+Adobe is proud to be an Equal Employment Opportunity and affirmative action employer. We do not discriminate based on gender, race or color, ethnicity or national origin, age, disability, religion, sexual orientation, gender identity or expression, veteran status, or any other applicable characteristics protected by law. Learn more.
+
+
+Adobe aims to make Adobe.com accessible to any and all users. If you have a disability or special need that requires accommodation to navigate our website or complete the application process, email accommodations@adobe.com or call (408) 536-3015.
+
+
+Adobe values a free and open marketplace for all employees and has policies in place to ensure that we do not enter into illegal agreements with other companies to not recruit or hire each other’s employees.

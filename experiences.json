@@ -34,16 +34,16 @@
 
     "work_experiences": [
         {
-            "start_date": "6-2019",
-            "end_date": "7-2022",
+            "start_date": "2019-06",
+            "end_date": "2022-07",
             "position" : "AI Software + Hardware Intern",
             "company" : "GameLore Inc",
             "location" : "Remote",
             "description": "Implemented AI-based ball tracking algorithms using TensorFlow. Developed YOLO model and trained to perform action recognition with 85% accuracy. Utility Patent on final algorithm. Used AMD’s profiling technology to locate GPU throttling code on NVIDIA’s Jetson board. Wrote C++ CUDA kernels to parallelize atomic operations."
         },
         {
-            "start_date": "5-2022",
-            "end_date": "8-2022",
+            "start_date": "2022-05",
+            "end_date": "2022-08",
             "position" : "AI Software Engineer",
             "company" : "Ambrego Inc",
             "location" : "Remote",
@@ -52,8 +52,8 @@
 
 
         {
-            "start_date": "5-2022",
-            "end_date": "12-2023",
+            "start_date": "2022-05",
+            "end_date": "2023-12",
             "position" : "Founding & Lead AI Engineer",
             "company" : "flockfysh Inc",
             "location" : "Remote",
@@ -65,9 +65,9 @@
         {
             "institution" : "UC Berkeley",
             "type" : "degree", 
-            "start_date" : "August 2022",
+            "start_date" : "2022-08",
             "area" : "EECS",
-            "end_date" : "August 2025",
+            "end_date" : "2025",
             "relevant_coursework" : ["Computer architecture", "Computer Security", "Integrated Circuit / Chip Design", "Machine Learning", "Mathematical Optimization Models", "Discrete Math and Probability Theory", "Structure and Interpretation of Computer Programs", "Designing Information Devices and Systems I", "Algorithms & Complexity"],
             "show_for_type" : "all",
             "gpa" : "3.8 UW",

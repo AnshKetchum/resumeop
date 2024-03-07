@@ -30,6 +30,10 @@ class LLMAPI:
     def add_message(self, role: str, content: str):
         pass
 
+    @abstractmethod
+    def prompt_and_response(self, prompt: str):
+        pass
+
 
 class OpenAIBackendAPI(LLMAPI):
     """

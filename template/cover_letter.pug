@@ -1,0 +1,30 @@
+.recipient
+  .name.bold #{cl_data.company.contact_name}
+  .address #{cl_data.company.address}
+  .city #{cl_data.company.city}
+
+.date #{cl_data.date}
+
+.opening Dear Hiring Team,
+
+.main-text
+  include:markdown-it tmp/content.md
+    
+.closing
+  p Sincerely,
+  .name.bold #{name.first} #{name.last}
+
+.sender
+  .name.bold #{name.first} #{name.last}
+  .address
+    span.street #{address.street}
+    span.postcode #{address.postcode}
+    span.country #{address.country}
+  .contact
+    span.phone #{contact.phone}
+    span.email #{contact.email}
+    span.website #{contact.website}
+
+
+style
+  include:scss letter.scss

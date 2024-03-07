@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from utils.LLM import OpenAIChatAPI, OpenAIBackendAPI, LLMAPI
 from utils.general import sanitize_for_latex, load_prompt_string, load_string, parse_json_garbage
 from experimental.experimental import generate_artificial_supplement_experiences
+from utils.cov import generate_cover_letter as latex_gen, read_json
 
 
 def generate_resume(info: dict, job_description: str):
@@ -57,6 +58,66 @@ def generate_resume(info: dict, job_description: str):
 
     # Call the general command to render the RESUME in latex
     os.system('rendercv render resume_int.json')
+
+
+def generate_cover_letter(llm: LLMAPI):
+
+    llm.prompt_and_response(
+        "Compose a strong introduction and expression of interest for a cover letter for the job description.")
+    llm.prompt_and_response(
+        "Explain how my skills match the requirements for the position")
+    llm.prompt_and_response(
+        "Describe my work experiences and explain how they demonstrate my potential for success in the role.")
+
+    llm.prompt_and_response(
+        "Illustrate my adaptability and willingness to learn new skills, emphasizing how these traits make me an excellent candidate for the position."
+    )
+
+    llm.prompt_and_response(
+        "Describe my passion for the industries, research, and fields relevant to the job and how this passion will contribute to my success in the role."
+    )
+
+    llm.prompt_and_response(
+        "Provide low-level, specific examples of my strong work ethic and commitment to excellence, demonstrating how these qualities make me a valuable asset for the job position. Delve into what these past highlights establish, and how I'll use this technical experience on the job."
+    )
+
+    llm.prompt_and_response(
+        "Compose a strong vibrant conclusion, summarizing my qualifications for the position and expressing my eagerness for an interview.")
+
+    out = llm.prompt_and_response("""
+                                  Compose a complete cover letter for the position, incorporating a strong introduction, a summary of relevant skills and experiences, an explanation of how my skills match the job requirements, a highlight of my most significant achievement, an explanation of my career gap or job switch (if applicable), showcasing my adaptability and willingness to learn, demonstrating my passion for the industry, emphasizing my strong work ethic and commitment, mentioning the value of my professional network, addressing the company’s values and culture, and ending with a powerful conclusion that expresses my eagerness for an interview.
+
+                                  Here is the general format.
+
+                                  Dear Hiring Manager
+
+                                  [YOUR RESPONSE WILL GO HERE]
+
+                                  Sincerely, 
+                                  Candidate
+
+                                  Write a cover letter by filling in the response section. Start with a sentence explicitly thanking them for taking the time to read the letter before writing the full response. Utilize the responses and the modular content you've
+                                  had to write in the previous couple prompts to assemble the letter. Make sure to include a 3-4 sentence paragraph highlighting specific accomplishments, and how I plan to use the knowledge
+                                  to bring a key advantage to the job. 
+
+                                  Only include the text -- do not include greetings like 'Dear Hiring Manager', or closing / endinging statements like 'Sincerely, Candidate' or anything remotely similar. Just the paragraphs in between that are the actual content.
+                                  """)
+
+    out = llm.prompt_and_response("""
+        Here are some concepts that you will need to understand: 
+                                  
+        When it comes to writing content, two factors are crucial, “perplexity” and “burstiness.” Perplexity measures the complexity of text. Separately, burstiness compares the variations of sentences. Humans tend to write with greater burstiness, for example, with some longer or complex sentences alongside shorter ones. AI sentences tend to be more uniform. Therefore, when writing the following content I am going to ask you to create, I need it to have a good amount of perplexity and burstiness.
+
+        Now, pretend you are a persuasive literature writing professor. Using the concepts above, rewrite the cover letter with a low amount of perplexity and a high amount of burstiness, while preserving the actual content. 
+        Proofread the cover letter - tactics like sophisticating the vocabulary to be more precise when possible would definitely help. Make sure to format the letter properly."""
+                                  )
+    with open('cover_letters/content.md', 'w') as f:
+        print(out, file=f)
+
+    latex_gen('let1', read_json('info.json'), read_json(
+        './cover_letters/info.json'), './cover_letters/content.md', './output/cover_letter.pdf')
+    shutil.move("out.pdf", "output/out.pdf")
+    shutil.rmtree("template/tmp")
 
 
 def get_resume_in_text(info_dct):
@@ -202,6 +263,7 @@ load_dotenv()
 
 # Switch to OpenAIChatAPI() if you want to use the experimental chat API -- note that none of your strings can contain this character: -> " <- .
 llm = OpenAIBackendAPI()
+GENERATE_COVER_LETTER = True
 
 # USER: CHANGE THE JOB NAME FOR MORE SPECIFIC RESEARCH / BETTER RESULES
 COMPANY_NAME = os.getenv("JOB_COMPANY_NAME")
@@ -243,6 +305,10 @@ with open('experiences2.json', 'w') as f:
 
 print("Generating resume", JOB_DESCRIPTION)
 generate_resume(info_dct, JOB_DESCRIPTION)
+
+if GENERATE_COVER_LETTER:
+    os.makedirs("cover_letters", exist_ok=True)
+    generate_cover_letter(llm)
 print("Done.")
 
 llm.quit()
