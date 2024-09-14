@@ -191,6 +191,7 @@ def resume_text_optimize(company_name, job_description, resume_string, llm: LLMA
         company_name=company_name,
         job_description=job_description, resume_string=resume_string.strip()).strip()
 
+    print('Sending, ', p)
     llm.prompt_and_response(p)
 
     resp = llm.prompt_and_response(company_research_prompt)
@@ -205,7 +206,7 @@ def resume_text_optimize(company_name, job_description, resume_string, llm: LLMA
         continue_response = llm.prompt_and_response(continue_prompt)
 
         print("\n\n")
-        print(continue_response)
+        print(continue_response, continue_response.startswith('Yes'))
 
         # We'll hard prune yesses
         if not continue_response.startswith("Yes"):
@@ -220,7 +221,10 @@ def resume_text_optimize(company_name, job_description, resume_string, llm: LLMA
         print("\n\n")
 
     # Post processing
-    generate_artificial_supplement_experiences(refined_resume_response, llm)
+    try:
+        generate_artificial_supplement_experiences(refined_resume_response, llm)
+    except: 
+        pass 
 
     # Turn the optimized work section into JSON
     resp = llm.prompt_and_response(work_json_prompt)
@@ -265,7 +269,8 @@ load_dotenv()
 # ----- BEGIN USER PARAMETERS -----
 
 # Switch to OpenAIChatAPI() if you want to use the experimental chat API -- note that none of your strings can contain this character: -> " <- .
-llm = OpenAIBackendAPI()
+USE_SELENIUM = True
+llm = OpenAIBackendAPI() if not USE_SELENIUM else OpenAIChatAPI()
 GENERATE_COVER_LETTER = True
 
 # USER: CHANGE THE JOB NAME FOR MORE SPECIFIC RESEARCH / BETTER RESULES

@@ -83,6 +83,7 @@ class OpenAIBackendAPI(LLMAPI):
         self.add_message("assistant", response)
         return response
 
+
     def add_message(self, role: str, content: str):
         self.history.append({"role": role, "content": content})
 
@@ -101,11 +102,21 @@ class OpenAIChatAPI(LLMAPI):
     Use this for small interactions (Resumes only)!
     """
 
-    def __init__(self, chrome_path="/usr/bin/google-chrome"):
+    def __init__(self, chrome_path='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'):
+        """
+            IF MAC: change to 
+
+            /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+            IF Linux: 
+
+            /usr/bin/google-chrome
+        """
         self.history = []
 
         # Setup our automation
         chrome_driver_path = ChromeDriverManager().install()
+        print(chrome_driver_path)
         self.chatgpt = ChatGPTAutomation(chrome_path, chrome_driver_path)
 
         # Track the last prompt sent
@@ -115,6 +126,7 @@ class OpenAIChatAPI(LLMAPI):
         """
         Gets an OpenAI response from the current history of messages 
         """
+
         self.chatgpt.send_prompt_to_chatgpt(
             self.last_human_prompt.strip())
 
@@ -122,7 +134,7 @@ class OpenAIChatAPI(LLMAPI):
         return response
 
     def set_latest_human_prompt(self, human_prompt: str):
-        self.last_human_prompt = human_prompt
+        self.last_human_prompt = self.sanitize_content(human_prompt)
 
     def add_human_prompt(self, human_prompt: str):
 
@@ -137,13 +149,19 @@ class OpenAIChatAPI(LLMAPI):
         # Generate a response
         response = self.generate().strip("ChatGPT").strip()
 
+
+        print("response", response) 
+
         # Add the response in
         if add:
             self.add_message("assistant", response)
         return response
+    
+    def sanitize_content(self, content: str):
+        return content
 
     def add_message(self, role: str, content: str):
-        self.history.append({"role": role, "content": content})
+        self.history.append({"role": role, "content": self.sanitize_content(content)})
 
     def messages(self):
         return self.history
