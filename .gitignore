@@ -10,6 +10,10 @@ output
 resume_int.json
 experiences2.json
 chatgpt_selenium_automation
+classic 
+cover_letters 
+rendercv_output
+*.yaml
 
 # API Generations
 remote-profile

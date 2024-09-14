@@ -17,6 +17,11 @@ clean:
 	rm -rf remote-profile
 	rm -rf .Rhistory
 	rm -rf conversations
+	rm -rf rendercv_output
+	rm -rf company_research.txt
+	rm -rf *.yaml
+	rm -rf classic 
+	rm -rf cover_letters
 
 clean-test:
 	rm -rf resume_int.json

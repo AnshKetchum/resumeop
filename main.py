@@ -19,39 +19,42 @@ def generate_resume(info: dict, job_description: str):
     out["cv"] = contact_info
 
     cv_out = out["cv"]
+
+    # Add the new 'sections' attribute
+    cv_out['sections'] = {}
+    sections = cv_out['sections']
+
+    # Build the summary
+    sections["summary"] = [info["summary"]]
+
     # Build the education section
     education = info["education"]
     for e in education:
         e["highlights"] = [','.join(e["relevant_coursework"])]
-    cv_out["education"] = education
+    sections["education"] = education
 
     # Build the work experiences section
     work_experience = info["work_experiences"]
-    cv_out["work_experience"] = work_experience
+    sections["work_experience"] = work_experience
 
     # Build the personal projects section
     if "project_experiences" in info:
         personal_projects = info["project_experiences"]
-        cv_out["personal_projects"] = personal_projects
+        sections["personal_projects"] = personal_projects
 
     # TODO - smaller item: add certifications
     if "certificates" in info:
         certificates = info["certificates"]
-        cv_out["certificates"] = certificates
+        sections["certificates"] = certificates
 
     if "publications" in info:
         publications = info["publications"]
-        cv_out["publications"] = publications
+        sections["publications"] = publications
 
-    if "custom_sections" in info:
-        custom_sections = info["custom_sections"]
-        cv_out["custom_sections"] = custom_sections
 
     # Build the skills section
-    cv_out["skills"] = info["skills"]
+    sections["skills"] = info["skills"]
 
-    # Build the summary
-    cv_out["summary"] = info["summary"]
 
     with open("resume_int.json", 'w') as f:
         json.dump(out, f)
@@ -244,7 +247,7 @@ def resume_text_optimize(company_name, job_description, resume_string, llm: LLMA
     resp = llm.prompt_and_response(skills_json_prompt)
     skills_json = parse_json_garbage(resp)
 
-    skills_json = [{"name": s['topic'], "details": ', '.join(s['name'])}
+    skills_json = [{"label": s['topic'], "details": ', '.join(s['name'])}
                    for s in skills_json["skills"]]
 
     # Convert summary
