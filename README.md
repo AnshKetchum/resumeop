@@ -8,7 +8,7 @@
 An optimizer that takes a job description, a bank of experiences, and tailors your resume to the job description using AI. Check out an example pdf generated right [here](Ansh_Chaurasia_CV.pdf).
 
 ## Changelog
-3/15/2024
+9/15/2024
 - Looking for early testers, and to validate setup for this project.
 - Please submit an issue if you run into problems - you can expect a response within 4-5 hours by developers
 
