@@ -1,6 +1,8 @@
 # Resume Optimizer
 ![](resume.png)
 
+[Sept 2024] Update: We are looking for beta testers - if you a student or researcher interested in making a direct contribution as an early tester towards helping candidates source jobs with completely free to use software, please message me at my Github email to be added to our beta server!  
+
 *Go the extra mile, without wasting thousands of hours. Achieve job market freedom using open source AI.*
 
 An optimizer that takes a job description, a bank of experiences, and tailors your resume to the job description using AI. Check out an example pdf generated right [here](Ansh_Chaurasia_CV.pdf).
